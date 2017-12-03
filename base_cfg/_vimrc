@@ -1,0 +1,44 @@
+set nocompatible
+
+" ================personal configure begin =========
+set nu rnu
+set cursorline cursorcolumn
+set magic
+set backspace=indent,eol,start
+set nocompatible
+set scrolloff=5
+
+colorscheme evening
+
+set guioptions-=T
+set guioptions-=m
+
+syn on
+set showmatch
+set matchtime=1
+
+set hlsearch
+set incsearch
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set list
+
+set nobackup
+set noswapfile
+
+set showcmd
+set smartindent
+set autoindent
+set ai!
+filetype plugin indent on
+
+map <F5> :call CompileRunGcc()<CR> 
+
+func! CompileRunGcc() 
+    exec "w" 
+    if &filetype == 'python' 
+        exec "!python %" 
+    endif 
+endfunc
+" ================personal configure end =========
